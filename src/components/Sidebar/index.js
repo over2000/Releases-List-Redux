@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 
 import * as CourseActions from '../../store/actions/course'
 
@@ -28,9 +29,7 @@ const mapSatateToProps = (state) => ({
   modules: state.course.modules,
 })
 
-const mapDispatchToProps = (dispatch) => ({
-  toggleLesson: (module, lesson) =>
-    dispatch(CourseActions.toggleLesson(module, lesson)),
-})
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators(CourseActions, dispatch)
 
 export default connect(mapSatateToProps, mapDispatchToProps)(Sidebar)
