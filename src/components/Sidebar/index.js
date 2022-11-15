@@ -1,17 +1,9 @@
 import React from 'react'
 
-import Box from '@mui/material/Box';
-import Drawer from '@mui/material/Drawer';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
-import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import AddRoundedIcon from '@mui/icons-material/AddRounded';
+import ListSubheader from '@mui/material/ListSubheader';
 
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
@@ -20,46 +12,31 @@ import * as CourseActions from '../../store/actions/course'
 
 const Sidebar = ({ modules, dispatch, toggleLesson }) => (
     
-    <Box sx={{ display: 'flex' }}>
-
-      <AppBar
-        position="fixed"
-      >
-        <Toolbar>
-          <Typography variant="h6" noWrap component="div">
-            title
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <Box
-        component="main"
-        sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}
-      >
-        <Toolbar />
-        <Typography paragraph>
-          Content
-        </Typography>
-
-      </Box>
-      <Drawer
-        variant="permanent"
-        anchor="right"
-      >
-        <Toolbar />
-        <Divider />
-        <List>
-
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  {<AddRoundedIcon />}
-                </ListItemIcon>
-                <ListItemText />
-              </ListItemButton>
-            </ListItem>
-        </List>
-      </Drawer>
-    </Box>
+<List
+sx={{
+  width: '100%',
+  maxWidth: 360,
+  bgcolor: 'background.paper',
+  position: 'relative',
+  overflow: 'auto',
+  maxHeight: 300,
+  '& ul': { padding: 0 },
+}}
+subheader={<li />}
+>
+{modules.map((module) => (
+  <li key={`section-${module.id}`}>
+    <ul>
+      <ListSubheader>{module.title}</ListSubheader>
+      {module.lessons.map((lesson) => (
+        <ListItem key={lesson.title}>
+          <ListItemText button onClick={() => toggleLesson(module, lesson)} primary={lesson.title} />
+        </ListItem>
+      ))}
+    </ul>
+  </li>
+))}
+</List>
   
 )
 

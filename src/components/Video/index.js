@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
 
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+
 import { connect } from 'react-redux'
 
 const Video = ({ activeModule, activeLesson }) => (
-  <div>
-    <strong>{activeModule.title}</strong>
-    <span>{activeLesson.title}</span>
-  </div>
+  <Box backgroundColor= 'red'>
+    <Typography>{activeModule.title}</Typography>
+    <Typography>{activeLesson.title}</Typography>
+  </Box>
 )
 
 export default connect((state) => ({
