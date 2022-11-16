@@ -4,18 +4,18 @@ const INITIAL_STATE = {
   modules: [
     {
       id: 1,
-      title: 'Module one',
+      title: 'SETS',
       lessons: [
-        { id: 1, title: 'lesson one' },
-        { id: 2, title: 'lesson two' },
+        { id: 1, title: '01', tracklist: ['1', '2', '3', '4'] },
+        { id: 2, title: '02', tracklist: ['1', '2', '3', '4'] },
       ],
     },
     {
       id: 2,
-      title: 'Module two',
+      title: 'ALBUNS',
       lessons: [
-        { id: 1, title: 'lesson one' },
-        { id: 2, title: 'lesson two' },
+        { id: 1, title: '01', tracklist: ['1', '2', '3', '4'] },
+        { id: 2, title: '02', tracklist: ['1', '2', '3', '4'] },
       ],
     },
   ],
