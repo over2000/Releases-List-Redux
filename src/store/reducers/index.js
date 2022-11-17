@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 
-import course from './course'
+import release from './release'
 
 export default combineReducers({
-  course,
+  release,
 })

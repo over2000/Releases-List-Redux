@@ -10,9 +10,9 @@ import ListItemButton from '@mui/material/ListItemButton'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import * as CourseActions from '../../store/actions/course'
+import * as ReleaseActions from '../../store/actions/release'
 
-const Sidebar = ({ modules, dispatch, toggleLesson }) => (
+const Sidebar = ({ modules, dispatch, toggleList }) => (
   <Drawer variant='permanent' anchor='right'>
     <List
       sx={{
@@ -26,13 +26,10 @@ const Sidebar = ({ modules, dispatch, toggleLesson }) => (
         <li key={`section-${module.id}`}>
           <ul>
             <ListSubheader>{module.title}</ListSubheader>
-            {module.lessons.map((lesson) => (
-              <ListItemButton
-                button
-                onClick={() => toggleLesson(module, lesson)}
-              >
-                <ListItem key={lesson.title}>
-                  <ListItemText primary={lesson.title} />
+            {module.lists.map((list) => (
+              <ListItemButton button onClick={() => toggleList(module, list)}>
+                <ListItem key={list.title}>
+                  <ListItemText primary={list.title} />
                 </ListItem>
               </ListItemButton>
             ))}
@@ -44,10 +41,10 @@ const Sidebar = ({ modules, dispatch, toggleLesson }) => (
 )
 
 const mapSatateToProps = (state) => ({
-  modules: state.course.modules,
+  modules: state.release.modules,
 })
 
 const mapDispatchToProps = (dispatch) =>
-  bindActionCreators(CourseActions, dispatch)
+  bindActionCreators(ReleaseActions, dispatch)
 
 export default connect(mapSatateToProps, mapDispatchToProps)(Sidebar)
