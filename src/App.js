@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Provider } from 'react-redux'
 
 import Sidebar from './components/Sidebar'
-import Video from './components/Video'
+import Content from './components/Content'
 
 import store from './store'
 
@@ -11,7 +11,7 @@ export default class App extends Component {
     return (
       <div className='App'>
         <Provider store={store}>
-          <Video />
+          <Content />
           <Sidebar />
         </Provider>
       </div>
