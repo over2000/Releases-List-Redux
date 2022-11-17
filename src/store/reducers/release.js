@@ -32,14 +32,22 @@ const INITIAL_STATE = {
       id: 2,
       title: 'ALBUNS',
       lists: [
-        { id: 1, title: 'IFSS001', tracklist: ['Start', 'Decay', 'Gain', 'FullOFF'] },
-        { id: 2, title: 'IFSS002', tracklist: ['LessCode', 'Hardline', 'Softway', 'BigSierra'] },
+        {
+          id: 1,
+          title: 'IFSS001',
+          tracklist: ['Start', 'Decay', 'Gain', 'FullOFF'],
+        },
+        {
+          id: 2,
+          title: 'IFSS002',
+          tracklist: ['LessCode', 'Hardline', 'Softway', 'BigSierra'],
+        },
       ],
     },
   ],
 }
 
-export default function course(state = INITIAL_STATE, action) {
+export default function list(state = INITIAL_STATE, action) {
   if (action.type === 'TOGGLE_LIST') {
     return {
       ...state,
