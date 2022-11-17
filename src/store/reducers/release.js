@@ -6,16 +6,34 @@ const INITIAL_STATE = {
       id: 1,
       title: 'SETS',
       lists: [
-        { id: 1, title: '01', tracklist: ['1', '2', '3', '4'] },
-        { id: 2, title: '02', tracklist: ['1', '2', '3', '4'] },
+        {
+          id: 1,
+          title: 'BOILER ROOM',
+          tracklist: [
+            'Floating Points - Sea',
+            'Aphex Twin - Watch',
+            'SIA - WORK',
+            'MF DOOM - CLASS',
+          ],
+        },
+        {
+          id: 2,
+          title: 'RINSE FM',
+          tracklist: [
+            'Boards of Canda - Sustance',
+            'Radiohead - Sprint',
+            'Paper Trails - DARKSIE',
+            'Glue - Bicep',
+          ],
+        },
       ],
     },
     {
       id: 2,
       title: 'ALBUNS',
       lists: [
-        { id: 1, title: '01', tracklist: ['1', '2', '3', '4'] },
-        { id: 2, title: '02', tracklist: ['1', '2', '3', '4'] },
+        { id: 1, title: 'IFSS001', tracklist: ['Start', 'Decay', 'Gain', 'FullOFF'] },
+        { id: 2, title: 'IFSS002', tracklist: ['LessCode', 'Hardline', 'Softway', 'BigSierra'] },
       ],
     },
   ],
